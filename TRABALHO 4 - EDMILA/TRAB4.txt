@@ -1,0 +1,89 @@
+Ikaro Camargo e Eric Prospero Viana
+
+Linguagem utilizada: Python
+_______________________________________________________________________________________________________________________________________
+
+Questão 1:
+
+def calcular_salario():
+    horas_trabalhadas = float(input("Digite o número de horas trabalhadas no mês: "))
+    salario_por_hora = float(input("Digite o salário por hora: "))
+
+    horas_semanais = 40
+    semanas_no_mes = 4
+    horas_mensais = horas_semanais * semanas_no_mes
+
+    if horas_trabalhadas > horas_mensais:
+        horas_extras = horas_trabalhadas - horas_mensais
+        valor_hora_extra = salario_por_hora * 1.5
+        salario_total = (horas_mensais * salario_por_hora) + (horas_extras * valor_hora_extra)
+    else:
+        salario_total = horas_trabalhadas * salario_por_hora
+
+    print(f"\nSalário Total: R$ {salario_total:.2f}")
+
+
+calcular_salario()
+_______________________________________________________________________________________________________________________________________
+
+Questão 2:
+
+def contagem_estoque():
+    quantidade_atual = int(input("Digite a quantidade atual em estoque: "))
+    quantidade_maxima = int(input("Digite a quantidade máxima em estoque: "))
+    quantidade_minima = int(input("Digite a quantidade mínima em estoque: "))
+
+    quantidade_media = (quantidade_maxima + quantidade_minima) / 2
+
+    print(f"\nQuantidade Média: {quantidade_media:.2f}")
+
+    if quantidade_atual >= quantidade_media:
+        print("Não efetuar compra")
+    else:
+        print("Efetuar compra")
+
+
+contagem_estoque()
+_______________________________________________________________________________________________________________________________________
+
+Questão 3:
+
+def verificar_acesso():
+    codigo_correto = 1234
+    senha_correta = 9999
+
+    codigo_usuario = int(input("Digite o código de usuário: "))
+
+    if codigo_usuario != codigo_correto:
+        print("Usuário inválido!")
+    else:
+        senha_usuario = int(input("Digite a senha: "))
+        if senha_usuario != senha_correta:
+            print("Senha incorreta!")
+        else:
+            print("Acesso permitido")
+
+
+verificar_acesso()
+_______________________________________________________________________________________________________________________________________
+
+Questão 4:
+
+def verificar_saldo():
+    numero_conta = input("Digite o número da conta do cliente: ")
+    saldo = float(input("Digite o saldo da conta: "))
+    debito = float(input("Digite o valor do débito: "))
+    credito = float(input("Digite o valor do crédito: "))
+
+    saldo_atual = saldo - debito + credito
+
+    print(f"\nNúmero da Conta: {numero_conta}")
+    print(f"Saldo Atual: R$ {saldo_atual:.2f}")
+
+    if saldo_atual >= 0:
+        print("Saldo Positivo")
+    else:
+        print("Saldo Negativo")
+
+
+verificar_saldo()
